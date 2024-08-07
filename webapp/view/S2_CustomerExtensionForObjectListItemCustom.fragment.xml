@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<!-- The following controls were copied from the parent view -->
+	<ObjectListItem xmlns="sap.m" id="MAIN_LIST_ITEM" type="{device&gt;/listItemType}" press="_handleItemPress" class="sapMTextBold"
+		title="{parts: [{path: 'TaskTitle'}, {path: 'CustomAttributeData'}], formatter: '.Conversions.formatterTaskTitle'}"
+		intro="{parts: [{path: 'TaskSupports/Release'}, {path: 'SupportsRelease'}], formatter: '.Conversions.formatterStatusForReserved'}"
+		number="{path: 'CustomAttributeData', formatter:'.Conversions.formatterCustomNumberValue'}"
+		numberUnit="{path: 'CustomAttributeData', formatter:'.Conversions.formatterCustomNumberUnitValue'}">
+		<attributes>
+			<ObjectAttribute id="ATTR1"
+				text="{parts: [{path: 'CreatedByName'}, {path: 'CustomAttributeData'}], formatter: '.Conversions.formatterCreatedBy'}"
+				tooltip="{parts: [{path: 'CreatedByName'}, {path: 'CustomAttributeData'}], formatter: '.Conversions.formatterCreatedBy'}"/>
+			<ObjectAttribute id="ATTR2"
+				text="{parts: [{path: 'CompletionDeadLine'}, {path: 'IsOverdue'}], formatter:'.Conversions.formatterDueDate'}"/>
+			<ObjectAttribute id="ATTR3" text="{path: 'SubstitutedUserName', formatter:'.Conversions.formatterSubstitutedText'}"
+				tooltip="{path: 'SubstitutedUserName', formatter:'.Conversions.formatterSubstitutedText'}"/>
+			<ObjectAttribute id="ATTR4"
+				text="{parts: [{path: 'CompletedOn'}, {path: 'Status'}], formatter:'.Conversions.formatterCompletedDate'}"/>
+			<ObjectAttribute id="ATTR5"
+				text="{parts: [{path: 'ResumeOn'}, {path: 'Status'}], formatter:'.Conversions.formatterResumeOnText'}"/>
+			<ObjectAttribute id="ATTR6"
+				text="{parts: [{path: 'CustomAttributeData'}, {path: 'taskDefinitionsModel&gt;/'}], formatter: 'cross.fnd.fiori.inbox.view.S2.prototype.Conversions.formatterListCustomObjectAttributeValue'}"
+				tooltip="{parts: [{path: 'CustomAttributeData'}, {path: 'taskDefinitionsModel&gt;/'}], formatter: 'cross.fnd.fiori.inbox.view.S2.prototype.Conversions.formatterListCustomObjectAttributeValue'}"/>
+			<!-- Change Classification -->
+			<ObjectAttribute id="ATTR7"
+				text="{ChangeClassDesc}"/>	
+		</attributes>
+		<firstStatus>
+			<ObjectStatus id="STAT1"
+				text="{parts: [{path: 'SAP__Origin'}, {path: 'Priority'}], formatter:'.Conversions.formatterPriority'}"
+				state="{path: 'Priority', formatter:'.Conversions.formatterPriorityState'}"></ObjectStatus>
+		</firstStatus>
+		<secondStatus>
+			<ObjectStatus id="STAT2"
+				text="{parts: [{path: 'CompletionDeadLine'}, {path: 'IsOverdue'}], formatter:'.Conversions.formatterDeadLineIndicator'}"
+				state="{parts: [{path: 'CompletionDeadLine'}, {path: 'IsOverdue'}], formatter:'.Conversions.formatterDeadLineIndicatorState'}"></ObjectStatus>
+		</secondStatus>
+	</ObjectListItem>
+</core:FragmentDefinition>

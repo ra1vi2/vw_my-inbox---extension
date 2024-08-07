@@ -1,0 +1,76 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "vwks.cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{SHELL_TITLE}}",
+        "ach": "XX-PROJ-CDP-TEST-808",
+        "resources": "resources.json"
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://approvals",
+            "favIcon": "./resources/sap/ca/ui/themes/base/img/favicon/Approve_Requests.ico"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "dependencies": {
+            "minUI5Version": "1.81.4",
+            "libs": {
+                "vwks.nlp.s2p.mm.reuse.lib": {
+                    "lazy": false
+                }
+            }
+        },
+        "extends": {
+            "component": "cross.fnd.fiori.inbox",
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "cross.fnd.fiori.inbox.view.S2": {
+                        "CustomerExtensionForObjectListItem": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "vwks.cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension.view.S2_CustomerExtensionForObjectListItemCustom",
+                            "type": "XML"
+                        }
+                    }
+                },
+                "sap.ui.controllerExtensions": {
+                    "cross.fnd.fiori.inbox.view.S2": {
+                        "controllerName": "vwks.cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension.view.S2Custom"
+                    },
+                    "cross.fnd.fiori.inbox.view.S3": {
+                        "controllerName": "vwks.cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension.view.S3Custom"
+                    }
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n_ext": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "vwks.cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension.i18n.i18n"
+                }
+            }
+        }
+    }
+}
